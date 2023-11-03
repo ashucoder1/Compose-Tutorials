@@ -27,39 +27,28 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.app.NavUtils
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.composeapp.ui.theme.ComposeAppTheme
 
 class MainActivity : ComponentActivity() {
+
+    lateinit var navController:NavHostController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             ComposeAppTheme {
-                // A surface container using the 'background' color from the theme
+                // A surface container using the 'background' color from the them
+                navController= rememberNavController()
+                SetupNavGraph(navHostController = navController)
 
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background,
-                )
-                {
-
-//                    CustomText()
-//                    Greeting()
-                    Column(modifier = Modifier
-                        .fillMaxSize()
-                        .background(Color.Gray)
-                        .padding(24.dp)
-                    ) {
-//                        CustomItem(weight = 3f, color = MaterialTheme.colorScheme.secondary)
-//                        CustomItem(weight = 1f, color = MaterialTheme.colorScheme.primary)
-                        ExpandableCard(title="MY Final Title",
-                            description = "sdfdsdffdfffsdfs" +
-                                    "sdfsdfsfdfdsdffsfdsdfsd" +
-                                    "sfsdfdfdfsdfdsfdfdsfdsdf" +
-                                    "sdfdffsffjhhjjmhhjmmhmhm"
-                        )
-
-                    }
-                }
+//                Surface(
+//                    modifier = Modifier.fillMaxSize(),
+//                    color = MaterialTheme.colorScheme.background,
+//                )
+//                {
+               // }
             }
         }
     }
